@@ -1,0 +1,394 @@
+@import '../../../styles/variables.less';
+
+@black-text: #010101;
+@filter-background: #eeeeee;
+
+@table-text-color: #231f20;
+@table-grey-background: #e7e7e7;
+
+@mobile-grey: #bcbec0;
+
+.points-text() {
+  font-size: 16px;
+  color: @black-text;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: bottom;
+
+  @media (max-width: @webBoundary) {
+    & {
+      margin-right: 0;
+    }
+  }
+}
+
+.points-number() {
+  font-size: 36px;
+  color: @ufsOrange;
+}
+
+.ufs-link {
+  font-size: 14px;
+  color: @ufsFontGray;
+  text-decoration: none;
+  border-bottom: 1px solid @ufsFontGray;
+  line-height: 1;
+}
+
+.ufs-table() {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+
+  thead tr {
+    th {
+      background-color: @ufsOrange;
+      font-size: 16px;
+      color: @white;
+      height: 36px;
+      text-align: center;
+      border-right: 4px solid @white;
+      padding: 0;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  tbody tr {
+    td {
+      background-color: @white;
+      font-size: 16px;
+      color: @table-text-color;
+      height: 32px;
+      text-align: center;
+      border-right: 4px solid @white;
+      padding: 0 5px;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  &.striped {
+    tbody tr:nth-child(2n+2) {
+      td {
+        background-color: @table-grey-background;
+      }
+    }
+  }
+}
+
+.ufs-mobile-table() {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  tbody tr {
+    td {
+      border-bottom: 1px solid @mobile-grey;
+      padding: 14px 0 8px;
+    }
+  }
+}
+
+.custom-button() {
+  .ufs-button {
+    line-height: 24px;
+  }
+
+  @media (max-width: @webBoundary) {
+    & {
+      width: 33.33333333%;
+
+      .ufs-button {
+        line-height: 16px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#ufs-points-record {
+  .clearfix:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+  }
+
+  .points-info {
+    line-height: 36px;
+    overflow: hidden;
+  }
+
+  .remain-points {
+    float: left;
+
+    .remain-points-text {
+      .points-text();
+    }
+
+    .remain-points-number {
+      .points-number();
+    }
+  }
+
+  .overdue-points {
+    float: left;
+    margin-left: 100px;
+
+    .number-line {
+      text-align: left;
+
+      .overdue-points-text {
+        .points-text();
+      }
+
+      .overdue-points-number {
+        .points-number();
+      }
+    }
+
+    .date-line {
+      line-height: 1;
+      text-align: left;
+      margin-top: -5px; // hack: make the date closer to expired score
+
+      .overdue-points-date {
+        font-size: 12px;
+        color: @ufsFontGray;
+        position: relative;
+        left: -22px;
+      }
+    }
+  }
+
+  .rules {
+    float: right;
+
+    .points-rules {
+      .ufs-link();
+
+      display: inline-block;
+      line-height: 19px;
+      vertical-align: bottom;
+    }
+  }
+
+  .record-filter {
+    margin-top: 34px;
+    background-color: @filter-background;
+    padding: 20px;
+    font-size: 0;
+    text-align: left; // reset the  text-align: center assigned to #ufs-member-center
+
+    .filter-buttons {
+      float: left;
+
+      .all {
+        .custom-button();
+      }
+
+      .acquisition {
+        .custom-button();
+        margin-left: 16px;
+      }
+
+      .consumption {
+        .custom-button();
+        margin-left: 16px;
+      }
+
+    }
+
+    .filter-date {
+      float: right;
+    }
+  }
+
+  .records {
+    margin-bottom: 134px;
+
+    .records-table {
+      .ufs-table();
+
+      .point {
+        width: 130px;
+      }
+
+      .point-type {
+        width: 130px;
+      }
+
+      .description {
+        width: 316px;
+      }
+
+      .date {
+        width: 162px;
+      }
+    }
+
+    .records-mobile-table {
+      display: none;
+    }
+
+    .records-table-pagination {
+      margin-top: 30px;
+    }
+
+    .empty-message {
+      color: @ufsFontGray;
+      font-size: 14px;
+      text-align: center;
+      padding: 80px 48px;
+      margin-top: 70px;
+      background: url('../../../images/icon-error.png') center top no-repeat;
+      background-size: 80px 80px;
+    }
+
+    .show-in-web {
+      display: block;
+    }
+
+    .show-in-mobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: @webBoundary) { // hide pagination in mobile devices
+  #ufs-points-record {
+    .points-info {
+      padding: 10px 15px 22px;
+      line-height: 24px;
+
+      .rules {
+        float: none;
+        line-height: 1;
+        text-align: right;
+
+        .points-rules {
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+
+      .remain-points {
+        margin-top: 18px;
+
+        .remain-points-text {
+          font-size: 12px;
+        }
+
+        .remain-points-number {
+          font-size: 24px;
+        }
+      }
+
+      .overdue-points {
+        margin-top: 18px;
+        margin-left: 50px;
+
+        .overdue-points-text {
+          font-size: 12px;
+        }
+
+        .overdue-points-number {
+          font-size: 24px;
+        }
+
+        .overdue-points-date {
+          left: 0;
+        }
+
+        .date-line {
+          margin-top: -3px;
+        }
+      }
+    }
+
+    .record-filter {
+      padding: 8px 15px;
+      margin-top: 0;
+      position: relative;
+      height: 32px;
+
+      .filter-buttons {
+        width: 100%;
+
+        .all {
+          margin-left: 0;
+        }
+
+        .acquisition {
+          margin-left: 0;
+        }
+
+        .consumption {
+          margin-left: 0;
+        }
+      }
+
+      .filter-date {
+        display: none;
+      }
+    }
+
+    .records {
+      padding: 0 15px;
+      margin-bottom: 10px;
+
+      .records-table {
+        display: none;
+      }
+
+      .records-mobile-table {
+        .ufs-mobile-table();
+        border-collapse: collapse;
+
+        .points-type {
+          width: 80%;
+          text-align: left;
+
+          .type {
+            display: block;
+            line-height: 1;
+            font-size: 12px;
+            color: @black-text;
+          }
+
+          .date {
+            display: block;
+            line-height: 1;
+            font-size: 10px;
+            color: @mobile-grey;
+            margin-top: 4px;
+          }
+        }
+
+        .points-change {
+          width: 20%;
+          text-align: right;
+          vertical-align: top;
+          font-size: 12px;
+          color: @black-text;
+        }
+      }
+
+      .show-in-web {
+        display: none;
+      }
+
+      .show-in-mobile {
+        display: block;
+      }
+    }
+  }
+}

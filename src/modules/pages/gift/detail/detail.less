@@ -1,0 +1,157 @@
+@import '../../../styles/variables.less';
+@import '../../../../../../static/h5/styles/mixins.less';
+@import '../../../styles/mixin.less';
+
+@base-font-color: #231f20;
+@product-sku-color: #9e9e9f;
+@giftDetailTagSize: 60px;
+@giftDetailTagSizeMobile: 17%;
+
+#ufs-gift-detail {
+  text-align: left;
+
+  img {
+    max-width: 100%;
+  }
+
+  .detail-meta-wrapper {
+    margin-bottom: 16px;
+    position: relative;
+
+    .gift-tag {
+      position: absolute;
+      left: -5px;
+      top: 0;
+      .ufs-icon('../images/icon_summer_selection.png', @giftDetailTagSize, @giftDetailTagSize);
+    }
+  }
+
+  img.product-picture {
+    float: left;
+    width: 350px;
+    height: 350px;
+  }
+
+  .detail-meta {
+    float: left;
+    margin-left: 16px;
+    width: 384px;
+
+    .product-name {
+      font-size: 16px;
+      color: @base-font-color;
+      margin-bottom: 20px;
+    }
+
+    .product-exchange {
+      margin-bottom: 16px;
+
+      .score {
+        float: left;
+        font-size: 12px;
+        color: @ufsOrange;
+      }
+
+      .used-count {
+        float: right;
+        font-size: 10px;
+        color: @ufsFontGray;
+      }
+    }
+
+    .delivery-address {
+      margin-bottom: 16px;
+      color: @base-font-color;
+
+      .ufs-select-container {
+        vertical-align: middle;
+        margin-bottom: 0;
+        width: auto;
+        min-width: 100px;
+      }
+
+      .gift-status {
+        margin-left: 8px;
+        font-size: 12px;
+
+        &.out-of-stock {
+          color: red;
+        }
+      }
+    }
+
+    .count {
+      margin-bottom: 30px;
+    }
+
+    .exchange-btn {
+      display: inline-block;
+      margin-left: 50px;
+      position: relative;
+
+      button {
+        width: 216px;
+      }
+    }
+
+    .meta-label {
+      display: inline-block;
+      vertical-align: middle;
+      width: 40px;
+      color: @base-font-color;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+  }
+
+  .product-sku {
+    margin-bottom: 18px;
+    font-size: 10px;
+    color: @product-sku-color;
+  }
+}
+
+@media (max-width: @webBoundary) {
+  #ufs-gift-detail {
+    .detail-meta-wrapper {
+      .gift-tag {
+        left: 0;
+        .ufs-icon('../images/icon_summer_selection.png', @giftDetailTagSizeMobile, @giftDetailTagSizeMobile);
+      }
+    }
+
+    img.product-picture {
+      float: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .detail-meta {
+      float: none;
+      margin-left: 0;
+      width: 100%;
+      padding: 18px;
+      box-sizing: border-box;
+
+      .exchange-btn {
+        position: fixed;
+        bottom: 7px;
+        right: 18px;
+        z-index: 6;
+
+        button {
+          width: 96px;
+        }
+      }
+    }
+
+    .product-sku {
+      display: none;
+    }
+
+    .product-detail {
+      width: 100%;
+      overflow-x: hidden;
+    }
+  }
+}

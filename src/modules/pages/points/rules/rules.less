@@ -1,0 +1,184 @@
+@import '../../../styles/variables.less';
+
+@list-text-color: #5e5e5e;
+@header-3-font-color: #231f20;
+
+#ufs-points-rules {
+  text-align: left;
+  position: relative;
+
+  .ufs-header1 {
+    font-size: 24px;
+    font-weight: normal;
+    color: @ufsOrange;
+    margin: auto;
+  }
+
+  .ufs-ul {
+    margin-left: 14px;
+
+    li {
+      display: block;
+      font-size: 16px;
+      line-height: 1;
+      color: @list-text-color;
+      margin-top: 10px;
+      position: relative;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: @ufsOrange;
+        border-radius: 2px;
+        position: absolute;
+        left: -14px;
+        top: 6px;
+      }
+    }
+  }
+
+  .ufs-header2 {
+    color: @white;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 16px;
+    line-height: 40px;
+    background-color: @ufsOrange;
+    margin: auto;
+  }
+
+  .ufs-header3 {
+    color: @header-3-font-color;
+    font-size: 12px;
+    font-weight: normal;
+    margin: auto;
+  }
+
+  .ufs-paragraph {
+    color: @list-text-color;
+    font-size: 12px;
+    font-weight: normal;
+    margin: auto;
+  }
+
+  .ufs-emphasize {
+    color: @ufsOrange;
+  }
+
+  .ufs-horizon {
+    border: 0;
+    border-top: 1px solid @ufsBarGray;
+    margin: 16px auto;
+  }
+
+  .content-block {
+    position: relative;
+  }
+
+  .point-rule-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .club-benefits {
+    margin-top: 36px;
+  }
+
+  .membership-acquisition {
+    margin-top: 45px;
+  }
+
+  .paragraph {
+    margin-top: 20px;
+  }
+
+  .points-rules {
+    margin-top: 36px;
+  }
+
+  .bylaw {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: @webBoundary) {
+  #ufs-points-rules {
+    .ufs-header1 {
+      font-size: 21px;
+      text-align: center;
+    }
+
+    .ufs-ul {
+      li {
+        font-size: 12px;
+        width: 170px;
+
+        &::before {
+          top: 4px;
+        }
+      }
+    }
+
+    .ufs-header2 {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+
+    .ufs-header3 {
+      font-size: 10px;
+    }
+
+    .ufs-paragraph {
+      font-size: 10px;
+    }
+
+    .ufs-horizon {
+      margin: 4px 0 14px;
+    }
+
+    .mobile-horizon-hack {
+      margin-top: 14px;
+    }
+
+    .content-block {
+      padding: 0 15px;
+
+      &:last-child {
+        margin-bottom: 10px; // add some blank at the bottom of page
+      }
+    }
+
+    .point-rule-image {
+      height: 90px;
+      right: 15px;
+    }
+
+    .rule-head {
+      margin-top: 22px;
+    }
+
+    .club-benefits {
+      margin-top: 24px;
+    }
+
+    .membership-acquisition {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .points-rules {
+      margin-bottom: 20px;
+    }
+
+    .paragraph {
+      margin-top: 14px;
+    }
+  }
+}

@@ -1,0 +1,276 @@
+@import '../../../styles/variables.less';
+
+@filterButtonMarginLeft: 16px;
+@filterButtonWidth: 94px;
+@filterButtonLineHeight: 24px;
+
+@filterButtonMobileWidth: 72px;
+@filterButtonMobileLineHeight: 16px;
+
+@filterBackground: #eeeeee;
+
+@greyLineColor: #e6e7e8;
+
+@mobileItemDescriptionColor: #231f20;
+
+.defail-ufs-button() {
+  .ufs-button {
+    line-height: 18px;
+    width: 94px;
+  }
+
+  @media (max-width: @webBoundary) {
+    & {
+      .ufs-button {
+        padding: 5px 0;
+        line-height: 12px;
+        width: 72px;
+      }
+    }
+  }
+}
+
+.flex() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-item(@count) {
+  -webkit-box-flex: @count;
+  -webkit-flex: @count;
+  flex: @count;
+}
+
+.custom-button() {
+  @media (min-width: @webBoundary) {
+    & {
+      .ufs-button {
+        line-height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: @webBoundary) {
+    width: 33%;
+    & {
+      .ufs-button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#ufs-order-history {
+  .clearfix:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+  }
+
+  .history-filters {
+    font-size: 0;
+    background-color: @filterBackground;
+    padding: 20px;
+  }
+
+  .history-type-filter {
+    float: left;
+
+    .show-all-records {
+      .custom-button();
+    }
+
+    .show-recharge-records {
+      .custom-button();
+      margin-left: @filterButtonMarginLeft;
+    }
+
+    .show-gift-records {
+      .custom-button();
+      margin-left: @filterButtonMarginLeft;
+    }
+  }
+
+  .history-date-filter {
+    float: right;
+  }
+
+  .record-list {
+    margin-top: 14px;
+    text-align: left;
+
+    .record-item {
+      padding: 16px 0 20px;
+      overflow: hidden;
+      border-bottom: 2px solid @greyLineColor;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .image-date-wrapper {
+      float: left;
+
+      .image {
+        width: 150px;
+        height: 150px;
+        border: 0;
+      }
+
+      .date {
+        font-size: 16px;
+        color: @ufsFontGray;
+        line-height: 1;
+        margin-top: 4px;
+      }
+    }
+
+    .item-info {
+      width: 584px;
+      float: left;
+      margin-left: 16px;
+
+      .name {
+        margin-top: 7px;
+        width: 265px;
+        font-size: 16px;
+        color: @ufsFontBlack;
+        float: left;
+      }
+
+      .status {
+        margin-top: 7px;
+        margin-left: 46px;
+        float: left;
+        font-size: 16px;
+        color: @ufsFontGray;
+
+        &.orange {
+          color: @ufsOrange;
+        }
+      }
+
+      .detail {
+        .defail-ufs-button();
+
+        float: right;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .records-pagination {
+    margin-top: 20px;
+  }
+
+  .empty-message {
+    color: @ufsFontGray;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    padding-top: 102px;
+    background: url('../../../images/gift.png') no-repeat;
+    background-position: center 35px;
+  }
+}
+
+@media (max-width: @webBoundary) {
+  #ufs-order-history {
+    .history-filters {
+      padding: 8px 15px;
+      height: 32px;
+      position: relative;
+    }
+
+    .history-type-filter {
+      width: 100%;
+
+      .show-recharge-records {
+        margin-left: 0;
+      }
+
+      .show-gift-records {
+        margin-left: 0;
+      }
+
+      .show-course-records {
+        margin-left: 0;
+      }
+    }
+
+    .history-date-filter {
+      display: none;
+    }
+
+    .record-list {
+      margin-top: 10px;
+      padding: 0 15px;
+      border-bottom-width: 1px;
+
+      .record-item {
+        .flex();
+        padding: 6px 0;
+      }
+
+      .image-date-wrapper {
+        float: none;
+
+        .image {
+          width: 80px;
+          height: 80px;
+        }
+
+        .date {
+          font-size: 10px;
+        }
+      }
+
+      .item-info {
+        .flex-item(1);
+
+        height: 99px;
+        position: relative;
+
+        .name {
+          font-size: 12px;
+          margin-top: 3px;
+          color: @mobileItemDescriptionColor;
+          width: 100%;
+        }
+
+        .status {
+          font-size: 10px;
+          margin-left: 0;
+          margin-top: 8px;
+          position: absolute;
+          left: 0;
+          bottom: 40px;
+
+          &.orange {
+            width: 72px;
+            height: 24px;
+            background-color: #eeeeef;
+            font-size: 12px;
+            text-align: center;
+            line-height: 24px;
+            position: absolute;
+            left: auto;
+            right: 2px;
+            bottom: 0;
+          }
+        }
+
+        .detail {
+          position: absolute;
+          right: 2px;
+          bottom: 0;
+        }
+      }
+    }
+
+  }
+}

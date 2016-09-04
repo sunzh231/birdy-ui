@@ -1,0 +1,166 @@
+@import '../../../styles/variables.less';
+
+@order-template-font-light-grey: #5D5E5E;
+
+#ufs-order-detail {
+  .ufs-button-container {
+    .ufs-button {
+      width: 96px;
+    }
+  }
+
+  .header-img {
+    display: inline-block;
+    background: url('../../../images/order_completion.png') no-repeat;
+  }
+
+  .mobile-header, .pc-header {
+    display: none;
+  }
+
+  .header-title {
+    color: @ufsOrange;
+    font-size: 21px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  .order-completion-info {
+    color: @order-template-font-light-grey;
+  }
+
+  .receipt-address {
+    text-align: left;
+  }
+
+  .logistics {
+    text-align: left;
+
+    .time-line {
+      position: relative;
+      border-left: @ufsOrange solid 2px;
+      padding: 5px 0px 0px 10px;
+      height: 20px;
+      float: left;
+
+      .time-point {
+        position: absolute;
+        left: -6px;
+        top: 7px;
+        display: inline-block;
+        border: 5px solid @ufsOrange;
+        border-radius: 50%;
+      }
+    }
+
+    .logistics-newly-info {
+      width: 90%;
+      float: left;
+
+      .logistics-text {
+        display: inline-block;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+@media (min-width: @webBoundary) {
+  #ufs-order-detail {
+    .pc-header {
+      display: block;
+
+      .header-img {
+        width: 32px;
+        height: 40px;
+        background-size: cover;
+      }
+    }
+
+    .header-title {
+      margin-top: 5px;
+      margin-left: 16px;
+    }
+
+    .order-completion-info {
+      font-size: 16px;
+    }
+
+    .receipt-address {
+      line-height: 20px;
+    }
+
+    .logistics {
+      .logistics-newly-info {
+        margin-bottom: 20px;
+        padding-top: 2px;
+
+        .logistics-time {
+          margin-right: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @webBoundary) {
+  #ufs-order-detail {
+    .template-header {
+      margin-bottom: 14px;
+    }
+
+    .mobile-header {
+      display: block;
+
+      .header-img {
+        width: 54px;
+        height: 70px;
+        background-size: cover;
+      }
+
+      .header-info {
+        display: inline-block;
+        text-align: left;
+        margin-left: 16px;
+        vertical-align: top;
+
+        .header-title {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .receipt-address {
+      line-height: 16px;
+    }
+
+    .logistics {
+      .logistics-newly-info {
+        margin-bottom: 10px;
+        padding-top: 5px;
+
+        .logistics-time {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}
+
+// Compatible with small screen, the layout will be chaos because of the long order id.
+@media (max-width: 330px) {
+  #ufs-order-detail {
+    .order-completion-info {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 330px) and (max-width: @webBoundary) {
+  #ufs-order-detail {
+    .order-completion-info {
+      font-size: 14px;
+    }
+  }
+}

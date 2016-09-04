@@ -1,0 +1,70 @@
+@import '../../../styles/variables.less';
+
+#ufs-order-success {
+  @font-color: #5d5e5e;
+
+  color: @font-color;
+  width: 290px;
+  margin-left: 256px;
+
+  p {
+    margin: 0;
+  }
+
+  .icon-msg {
+    padding-top: 96px;
+    margin-bottom: 24px;
+    background: url('../../../images/ordersuccess.png') center top no-repeat;
+    background-size: 80px 80px;
+    font-size: 24px;
+  }
+
+  .info {
+    background: #eee;
+    padding: 10px 15px;
+    margin-bottom: 34px;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: left;
+
+    span {
+      display: block;
+
+      &:first-child {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .ufs-button-container {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: @webBoundary) {
+  #ufs-order-success {
+
+    width: auto;
+    margin: 32px 20px 0;
+
+    .icon-msg {
+      margin-bottom: 26px;
+    }
+
+    .info {
+      margin: 0 0 26px;
+      font-size: 14px;
+      line-height: 15px;
+
+      span {
+        &:first-child {
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    .ufs-button-container {
+      margin: 0 0 14px;
+    }
+  }
+}

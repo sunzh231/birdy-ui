@@ -1,0 +1,53 @@
+@import '../../../../static/h5/styles/mixins.less';
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.box-pack(@position) {
+  box-pack: @position;
+  -moz-box-pack: @position;
+  -webkit-box-pack: @position;
+}
+
+.box-align(@position) {
+  box-align: @position;
+  -moz-box-align: @position;
+  -webkit-box-align: @position;
+}
+
+.box-orient(@position) {
+  box-orient: @position;
+  -moz-box-orient: @position;
+  -webkit-box-orient: @position;
+}
+
+.box-center {
+  .box();
+  .box-pack(center);
+  .box-align(center);
+  .box-orient(horizontal);
+}
+
+.ufs-icon(@url, @width, @height) {
+  background: url(@url);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: @width;
+  height:@height;
+  display: inline-block;
+}
+
+.ufs-backendground-icon(@url) {
+  background: url(@url);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

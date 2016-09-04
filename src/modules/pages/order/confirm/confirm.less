@@ -1,0 +1,146 @@
+@import '../../../styles/variables.less';
+
+@order-template-font-dark-grey: #5E5E5E;
+@order-template-font-grey: #5D5D5D;
+
+#ufs-order-confirm {
+  .ufs-button-container {
+    clear: both;;
+
+    .ufs-button.small {
+      width: 96px;
+    }
+  }
+
+  .header-img {
+    display: inline-block;
+    background: url('../../../images/order_confirmation.png') no-repeat;
+  }
+
+  .header-title {
+    color: @ufsOrange;
+    font-size: 21px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  .receipt-address {
+    text-align: left;
+
+    .radio-selected {
+      width: 16px;
+      height: 16px;
+      background: url('../../../images/radiobutton_selected.png') no-repeat;
+      float: left;
+      margin-top: 1px;
+    }
+
+    .receipt-address-info {
+      float: left;
+      max-width: 90%;
+      line-height: 20px;
+      word-break: break-all;
+    }
+  }
+
+  .template-submit {
+    color: @order-template-font-dark-grey;
+
+    .tip-control {
+      position: relative;
+
+      .ufs-button-container {
+        float: right;
+        margin-left: 16px;
+      }
+
+      span {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media (min-width: @webBoundary) {
+  #ufs-order-confirm {
+    .header-img {
+      width: 32px;
+      height: 40px;
+      background-size: cover;
+    }
+
+    .header-title {
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .order-completion-info {
+      font-size: 16px;
+    }
+
+    .receipt-address {
+      .receipt-address-info {
+        margin: 0px 0px 28px 12px;
+
+        .receipt-tel {
+          margin: 0px 20px 0px 28px;
+        }
+      }
+    }
+
+    .template-submit {
+      clear: both;
+      border-top: @ufsBarGray solid 2px;
+      padding-top: 30px;
+      margin-top: 14px;
+
+      span {
+        color: @order-template-font-grey;
+        margin-top: 6px;
+
+        .total-points {
+          display: inline-block;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @webBoundary) {
+  #ufs-order-confirm {
+    .header-img {
+      width: 54px;
+      height: 70px;
+    }
+
+    .header-title {
+      margin-top: 18px;
+      margin-left: 16px;
+    }
+    .receipt-address {
+      .receipt-address-info {
+        font-size: 13px;
+        margin: 0px 0px 18px 8px;
+      }
+    }
+
+    .template-submit {
+      margin-right: 20px;
+      position: fixed;
+      right: 0px;
+      bottom: 0px;
+      z-index: 10;
+
+      .ufs-button-container {
+        margin-bottom: 6px;
+      }
+
+      span {
+        margin-top: 2px;
+        font-size: 12px;
+      }
+    }
+  }
+}

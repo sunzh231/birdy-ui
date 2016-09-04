@@ -1,0 +1,653 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixin.less';
+@import '../../styles/reset.less';
+
+#ufs-home {
+  .member-avatar-icon {
+    border-radius: 50%;
+  }
+
+  .member-info {
+  }
+
+  .member-name {
+    color: @ufsFontBlack;
+    vertical-align: middle;
+    float: left;
+  }
+
+  .member-label {
+    border: 1px solid @ufsFontGray;
+    display: inline-block;
+    color: @ufsOrange;
+    vertical-align: middle;
+    float: left;
+  }
+
+  .member-privilege {
+    color: @ufsFontGray;
+    text-decoration: underline;
+    vertical-align: middle;
+    float: right;
+  }
+
+  .point-progress-bar {
+    width: inherit;
+    display: inline-block;
+
+    .ufscmcmall-progress-bar {
+      width: 100%;
+
+      .bar {
+        width: 100%;
+      }
+    }
+  }
+
+  .member-point-button {
+    color: white;
+    background-color: @ufsOrange;
+    border-color: @ufsHomeBtnBorderColor;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .point-info {
+    float: left;
+    text-align: left;
+
+    .point-header {
+      color: @ufsOrange;
+    }
+
+    .expire-date {
+      color: @ufsHomeLightGrayColor;
+    }
+  }
+
+  .point-wrap {
+    padding-top: 30px;
+
+    .point-item-header {
+      text-align: left;
+    }
+
+    .point-header-title {
+      color: @ufsOrange;
+      vertical-align: bottom;
+      line-height: 1;
+    }
+
+    .icon-circle {
+      .ufs-icon('../images/circle.png', 16px, 16px);
+      vertical-align: bottom;
+    }
+    .icon-right {
+      .ufs-icon('../images/arrow_right.png', 20px, 20px);
+      vertical-align: middle;
+    }
+
+    .spend-point-record {
+      color: @ufsOrange;
+      margin-right: 10px;
+      vertical-align: middle;
+      line-height: 1;
+      .font-size(16px);
+    }
+
+    .phone-recharge-icon {
+      .ufs-icon('../images/phone_recharge.png', 66px, 42px);
+    }
+
+    .gift-icon {
+      .ufs-icon('../images/home_gift.png', 66px, 42px);
+    }
+
+    .point-item-content {
+      border: 1px solid @ufsHomeBorderColor;
+      width: 100%;
+
+      .point-detail-wrap {
+        display: table;
+        padding-top: 32px;
+        min-height: 38px;
+
+        .gift-wrap {
+          float: left;
+          width: 136px;
+        }
+
+        .ufs-best-seller-gift {
+          height: auto;
+          width: auto;
+          padding-right: 0;
+        }
+      }
+
+      .view-all {
+        .ufs-button {
+          width: 100%;
+        }
+      }
+    }
+
+    .point-detail-header {
+      color: @ufsFontGray;
+      text-align: left;
+    }
+
+    .connect-line {
+      width: 3px;
+      height: 16px;
+      margin-left: 7px;
+      background-color: @ufsOrange;
+      clear: both;
+    }
+
+    .header-connect-line {
+      .connect-line();
+      height: 36px;
+    }
+
+    .phone-recharge-item {
+      border: 1px solid @ufsHomeBorderColor;
+
+      &-selected {
+        background-color: @ufsOrange;
+        color: @white !important; // add important for fix bug in ipad
+
+        .charge-amount {
+          color: @white !important;
+        }
+
+        .charge-spend {
+          color: @white !important;
+        }
+      }
+    }
+
+    .get-point-one-icon {
+      .ufs-backendground-icon('../images/point_one.png');
+      float: left;
+    }
+
+    .get-point-two-icon {
+      .ufs-backendground-icon('../images/point_two.png');
+      float: left;
+    }
+
+    .get-point-three-icon {
+      .ufs-backendground-icon('../images/point_three.png');
+      float: left;
+    }
+  }
+}
+
+@media (min-width: @webBoundary) {
+  #ufs-home {
+    width: 750px;
+    margin-bottom: 80px;
+
+    .mobile-point-info {
+      display: none;
+    }
+
+    .member-info-wrap {
+      display: table;
+    }
+
+    .member-avatar {
+      width: 155px;
+      padding-right: 20px;
+      float: left;
+    }
+
+    .member-avatar-icon {
+      width: 155px;
+      height: 155px;
+    }
+
+    .member-info {
+      width: 390px;
+      float: left;
+
+      .member-name {
+        .font-size(24px);
+      }
+
+      .member-label {
+        margin-left: 16px;
+        width: 66px;
+        height: 24px;
+        .font-size(12px);
+        line-height: 24px;
+      }
+
+      .member-privilege {
+        .font-size(12px);
+      }
+
+      .point-progress-bar {
+        margin-top: 16px;
+      }
+    }
+
+    .point-info {
+      width: 165px;
+      margin-left: 20px;
+
+      .point-header {
+        .font-size(12px);
+      }
+
+      .member-point-button {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        .font-size(24px);
+        margin-top: 12px;
+      }
+
+      .point-will-expire {
+        padding-top: 18px;
+
+        .expire-date {
+          .font-size(10px);
+        }
+      }
+    }
+
+    .point-item-header {
+
+      .point-header-title {
+        margin-left: 16px;
+        .font-size(24px);
+      }
+    }
+
+    .phone-recharge-wrap {
+      height: 156px;
+    }
+
+    .get-score-wrap {
+      min-height: 150px;
+    }
+
+    .point-item-content {
+      .item-description {
+        padding: 32px 30px;
+        float: left;
+      }
+
+      .point-detail-header {
+        .font-size(16px);
+      }
+
+      .gift-wrap {
+        &:not(:last-child) {
+          margin-right: 17px;
+        }
+      }
+
+      .point-detail {
+        margin-top: 20px;
+      }
+
+      .phone-recharge-item {
+        width: 135px;
+        height: 60px;
+        border: 1px solid @ufsHomeBorderColor;
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+      }
+
+      .charge-amount {
+        .font-size(18px);
+        color: @ufsOrange;
+        width: 100%;
+        display: block;
+        line-height: 1;
+        padding-top: 8px;
+      }
+
+      .charge-spend {
+        .font-size(16px);
+        color: @ufsFontGray;
+        line-height: 1;
+        display: block;
+        margin-top: 8px;
+      }
+
+      .view-all {
+        margin: 40px 30px 16px;
+      }
+
+      .get-point-wrap {
+        padding: 32px 0 0 30px;
+        text-align: left;
+        height: 116px;
+      }
+
+      .get-point-way {
+        float: left;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+
+        .get-point-way-icon {
+          width: 40px;
+          height: 40px;
+        }
+
+        .get-point-title {
+          .font-size(18px);
+          color: @ufsOrange;
+          display: block;
+          margin-left: 56px;
+          line-height: 1;
+        }
+
+        .get-point-detail {
+          display: block;
+          margin: 10px 0 24px 56px;
+          .font-size(18px);
+          color: @ufsFontGray;
+          line-height: 1;
+        }
+
+        .get-point-btn {
+          width: 218px;
+          height: 32px;
+          color: @white;
+          background-color: @ufsOrange;
+          display: block;
+          text-align: center;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @webBoundary) {
+  .point-info {
+    display: none;
+  }
+
+  #ufs-home {
+    margin-bottom: 20px;
+
+    .member-info-wrap {
+      .flex();
+      border-bottom: 3px solid @ufsBarGray;
+      padding: 0 15px;
+      min-height: 100px;
+
+      .member-avatar {
+        width: 80px;
+        position: relative;
+
+        .member-avatar-icon {
+          width: 80px;
+          height: 80px;
+          position: absolute;
+          top: 50%;
+          left: 0px;
+          margin-top: -40px;
+        }
+      }
+
+      .member-info {
+        .flex-item(1);
+        width: calc(~"100% - 96px");
+        padding: 16px 0 10px 16px;
+
+        .member-name {
+          .font-size(16px);
+        }
+
+        .member-label {
+          margin-left: 8px;
+          width: 50px;
+          height: 18px;
+          .font-size(10px);
+          line-height: 18px;
+        }
+
+        .point-progress-bar {
+          width: 100%;
+          margin: 14px 0 14px;
+        }
+
+        .ufscmcmall-progress-bar {
+
+          .progress {
+            border-width: 0 4px 4px 4px;
+          }
+
+          .icon-top {
+            border-top-width: 4px;
+          }
+
+          .bar,
+          .rate {
+            height: 4px;
+            margin: 0;
+          }
+
+          span {
+            .font-size(10px);
+            top: 4px;
+          }
+        }
+
+        .member-privilege {
+          .font-size(10px);
+        }
+
+        .mobile-point-info {
+          .flex();
+        }
+
+        .member-point-button {
+          .flex-item(1);
+          display: block;
+          width: calc(~'50% - 4px');
+          height: 24px;
+          .font-size(12px);
+          line-height: 24px;
+
+          &:not(:last-child) {
+            margin-right: 8px;
+          }
+
+          .point-header {
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+
+    .point-wrap {
+      padding: 16px 15px 0 15px;
+
+      .icon-circle {
+        width: 12px;
+        height: 12px;
+      }
+
+      .point-header-title {
+        .font-size(14px);
+        margin-left: 8px;
+      }
+
+      .spend-point-record {
+        .font-size(12px);
+        color: @ufsFontGray;
+        margin-right: 8px;
+      }
+
+      .connect-line {
+        width: 2px;
+        height: 8px;
+        margin-left: 5px;
+      }
+
+      .header-connect-line {
+        margin-left: 5px;
+        width: 2px;
+        height: 10px;
+      }
+
+      .icon-right {
+        width: 16px;
+        height: 16px;
+      }
+
+      .point-item-content {
+        .point-detail-wrap {
+          padding: 16px 16px 0 0;
+
+          .gift-wrap {
+            width: 32%;
+            float: left;
+          }
+
+          .gift-wrap:nth-child(1),
+          .gift-wrap:nth-child(2) {
+            margin-right: 2%;
+          }
+
+          .gift-wrap:nth-child(4) {
+            display: none;
+          }
+        }
+      }
+
+      .get-score-wrap {
+        min-height: 48px;
+      }
+
+      .item-description {
+        padding: 16px 16px;
+        width: 48px;
+      }
+
+      .point-use-icon {
+        width: 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: inline-block;
+      }
+
+      .point-detail-header {
+        display: none;
+      }
+
+      .phone-recharge-wrap {
+        .flex();
+        height: 104px;
+
+        .point-detail-wrap {
+          .flex-item(1);
+          display: block !important;  // fix bug on UC browser
+        }
+      }
+
+      .phone-recharge-item {
+        height: 32px;
+        margin-bottom: 8px;
+        width: 48%;
+        webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        &:not(:nth-child(2n)) {
+          margin-right: 4%;
+        }
+
+        &:nth-child(3) {
+          clear: left;
+        }
+
+        .charge-amount {
+          .font-size(12px);
+          color: @ufsOrange;
+          display: block;
+          line-height: 1;
+          margin-top: 4px;
+        }
+
+        .charge-spend {
+          .font-size(10px);
+          color: @ufsFontGray;
+          display: block;
+          line-height: 1;
+          margin-top: 2px;
+        }
+      }
+
+      .get-point-wrap {
+        margin: 0 16px;
+        text-align: left;
+
+        .get-point-way {
+          height: 48px;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid @ufsBarGray;
+          }
+        }
+
+        .get-point-way-icon {
+          width: 22px;
+          height: 22px;
+          margin-top: 12px;
+          vertical-align: middle;
+        }
+
+        .get-point-title {
+          .font-size(12px);
+          color: @ufsOrange;
+          line-height: 48px;
+          margin-left: 8px;
+        }
+
+        .get-point-detail {
+          .font-size(12px);
+          color: @ufsFontGray;
+          line-height: 48px;
+          margin-left: 2px;
+        }
+
+        .get-point-btn {
+          .font-size(12px);
+          color: @white;
+          background: @ufsOrange;
+          margin-top: 14px;
+          padding: 3px 5px;
+          float: right;
+        }
+      }
+
+      .points-to-get-all {
+        margin-top: 0;
+      }
+
+      .view-all {
+        margin: 16px;
+
+        .ufs-button-container {
+          .ufs-button.large {
+            .font-size(12px);
+            line-height: 12px;
+          }
+        }
+      }
+    }
+  }
+}
